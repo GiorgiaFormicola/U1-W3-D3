@@ -17,10 +17,24 @@ addButton.onclick = function () {
 
   const removeButton = document.createElement("button");
   removeButton.innerText = "Rimuovi";
+  removeButton.style.display = "none";
+
+  task.onmouseover = function (event) {
+    if (event.target === task) {
+      removeButton.style.display = "inline-block";
+    }
+  };
+
+  task.onmouseout = function (event) {
+    if (event.target === task) {
+      removeButton.style.display = "none";
+    }
+  };
 
   task.appendChild(removeButton);
 
   input.value = "";
+  task.hoover;
 
   task.onclick = function (event) {
     console.log(event);
